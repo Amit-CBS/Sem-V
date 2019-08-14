@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - Pattern",
+            "request": "launch",
+            "mainClass": "Pattern",
+            "projectName": "Sem V_7c413325"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - Fibo",
             "request": "launch",
             "mainClass": "Fibo"
