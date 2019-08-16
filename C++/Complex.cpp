@@ -3,26 +3,37 @@ using namespace std;
 class Complex
 {
     public:
-    	int real;
-        int imaginary;
-        void getdata()
+    	float r;
+        float i;
+        void set(float a,float b)
         {
-            cout<<"Enter the real of the Complex \n";
-            cin>>real;
-            cout<<"Enter the imaginary of the Complex \n";
-            cin>>imaginary;
+            r=a;
+            i=b;
         }
-        void sum(Complex number)
+        void sum(Complex c)
         {
-            real+=number.real;
-            imaginary+=number.imaginary;
+            r+=c.r;
+            i+=c.i;
         }
 };
 int main()
 {
-    Complex c1,c2;
-    c1.getdata();
-    c2.getdata();
-    c1.sum(c2);
-    cout<<"The result is :"<<c1.real<<" 	"<<c1.imaginary<<endl;
+    float a, b;
+    Complex c1, c2, c;
+    c.r=0;
+    c.i=0;
+    cout<<"For first number:\n\tEnter real part: ";
+    cin>>a;
+    cout<<"\tEnter imaginary part: ";
+    cin>>b;
+    c1.set(a,b);
+
+    cout<<"For second number:\n\tEnter real part: ";
+    cin>>a;
+    cout<<"\tEnter imaginary part: ";
+    cin>>b;
+    c2.set(a,b);
+    c.sum(c2);
+    c.sum(c1);
+    cout<<"The result is :"<<c.r<<"+"<<c.i<<"i\n";
 }
