@@ -9,14 +9,15 @@ class Employee
 main()
 {
     int n;
-    cout<<"Enter no. of employees:";
+    cout<<"Enter no. of employees: ";
     cin>>n;
     Employee ob[n];
     for(int i=0;i<n;i++)
     {
-        cout<<"Enter employee's name: ";
+        cout<<"For emplployee "<<i+1<<":\n";
+        cout<<"\tEnter employee's name: ";
         cin>>ob[i].name;
-        cout<<"Enter stock: ";
+        cout<<"\tEnter stock: ";
         cin>>ob[i].stock;
     }
     for(int i=0;i<n;i++)
@@ -31,5 +32,5 @@ main()
                 ob[i].name[20]=ob[j].name[20];
                 ob[j].name[20]=tempN[20];
             }
-    cout<<ob[n-1].name<<" has the highest stock."<<endl;
+    cout<<"\n"<<ob[n-1].name<<" has the highest stock."<<endl;
 }

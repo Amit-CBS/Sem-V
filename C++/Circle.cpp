@@ -3,22 +3,33 @@ using namespace std;
 class Circle
 {
     public:
-    	Circle()
-        {
-            getdata();
-        }
         string color;
-        int radius;
-        getdata()
+        double radius;
+        void getRadius()
         {
-            cout<<"Enter the color of the circle \n";
-            cin>>color;
-            cout<<"Enter the radius \n";
+            cout<<"Enter radius: ";
             cin>>radius;
+        }
+        void getColor()
+        {
+            cout<<"Enter color: ";
+            cin>>color;
+        }
+        double getArea()
+        {
+            return 3.14*radius*radius;
         }
 };
 int main()
 {
     Circle c1,c2,c3;
-    cout<<((c1.radius>c2.radius && c1.radius>c3.radius)?c1.color:((c2.radius>c1.radius && c2.radius>c3.radius)?c2.color:c3.color))<<endl;
+    c1.getRadius();
+    c1.getColor();
+    c2.getRadius();
+    c2.getColor();
+    c3.getRadius();
+    c3.getColor();
+    cout<<"\nCircle with radius "<<c1.radius<<" is "<<c1.color<<" and has area = "<<c1.getArea();
+    cout<<"\nCircle with radius "<<c2.radius<<" is "<<c2.color<<" and has area = "<<c2.getArea();
+    cout<<"\nCircle with radius "<<c3.radius<<" is "<<c3.color<<" and has area = "<<c3.getArea();
 }

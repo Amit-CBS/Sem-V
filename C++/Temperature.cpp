@@ -1,15 +1,13 @@
 #include <bits/stdc++.h>
 using namespace std;
-int convert(int cel)
+double C2F(double C)
 {
-    cout<<(cel*1.8+32);
-    return 0;
+    return (C*1.8+32);
 }
 int main()
 {
-    double cel;
-    double far;
-    cout<<"Enter the temperaturein deg C"<<endl;
-    cin>>cel;
-    convert(cel);
+    double C, F;
+    cout<<"Enter the temperature in degree Celcius: ";
+    cin>>C;
+    cout<<"Equivalent temperature in Fahrenheit = "<<C2F(C)<<"\n";
 }

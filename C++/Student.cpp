@@ -1,5 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
+int i;
 class Student
 {
     int admno;
@@ -8,27 +9,32 @@ class Student
     public:
         void TakeData()
         {
-            cout<<"Enter the name of the student \n";
+            cout<<"For student "<<i+1<<":\n";
+            cout<<"\tEnter name: ";
             cin>>sname;
-            cout<<"Enter the marks in maths,english and science: \n";
+            cout<<"\tEnter admission number: ";
+            cin>>admno;
+            cout<<"\tEnter the marks in Maths, English and Science: ";
             cin>>maths>>eng>>science;
+            cTotal();
         }
         void ShowData()
         {
-            cout<<"The total marks is: "<<total<<endl;
+            cout<<sname<<" (Admission no. "<<admno<<") "<<"has scored a total of "<<total<<" marks\n";
         }
-        float ctotal()
+        float cTotal()
         {
             total=maths+eng+science;
         }
 };
 int main()
 {
-    Student student1,student2;
-    student1.TakeData();
-    student1.ctotal();
-    student1.ShowData();
-    student2.TakeData();
-    student2.ctotal();void
-    student2.ShowData();
+    int n;
+    cout<<"Enter no. of students: ";
+    cin>>n;
+    Student student[n];
+    for(i=0;i<n;i++)
+        student[i].TakeData();
+    for(i=0;i<n;i++)
+        student[i].ShowData();
 }
