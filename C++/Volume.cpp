@@ -2,11 +2,11 @@
 using namespace std;
 float vol(int,int);
 float vol(float);
-int vol(int);
+int vol(double);
     
 int main()
 {
-    int r,h,a;
+    int r,h; double a;
     float r1;
     cout<<"Enter radius and height of a cylinder: ";
     cin>>r>>h;
@@ -24,9 +24,9 @@ float vol(int r,int h)
 }
 float vol(float r1)
 {
-    return((4*3.14*r1*r1*r1)/3);
+    return(4/3.0*3.14*r1*r1*r1);
 }
-int vol(int a)
+int vol(double a)
 {
     return(a*a*a);
 }

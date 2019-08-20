@@ -4,13 +4,14 @@ class TryComplex
 {
     public:
     	float r, i;
-        void sum(TryComplex c)
+        void sum(TryComplex c0)
         {
-            c.r+=r;
-            c.i+=i;
+            r+=c0.r;
+            i+=c0.i;
+            cout<<r<<" "<<c0.r<<endl;
         }
 };
-int main()
+main()
 {
     float a, b;
     TryComplex c1, c2, c;
@@ -23,7 +24,7 @@ int main()
     c2.r=3;
     c2.i=5;
 
-    c1.sum(c);
-    c2.sum(c);
+    c.sum(c1);
+    c.sum(c2);
     cout<<c.r<<"+"<<c.i<<"i\n";
 }
