@@ -3,25 +3,28 @@ using namespace std;
 class Complex
 {
     public:
-    	float r;
-        float i;
+    	float r=0;
+        float i=0;
         void set(float a,float b)
         {
             r=a;
             i=b;
         }
-        void sum(Complex c)
+        Complex sum(Complex c)
         {
-            r+=c.r;
-            i+=c.i;
+            Complex SUM;
+            SUM.r=r+c.r;
+            SUM.i=i+c.i;
+            return SUM;
         }
 };
 int main()
 {
     float a, b;
     Complex c1, c2, c;
-    c.r=0;
-    c.i=0;
+    // c.r=0;
+    // c.i=0;
+
     cout<<"For first number:\n\tEnter real part: ";
     cin>>a;
     cout<<"\tEnter imaginary part: ";
@@ -33,7 +36,7 @@ int main()
     cout<<"\tEnter imaginary part: ";
     cin>>b;
     c2.set(a,b);
-    c.sum(c2);
-    c.sum(c1);
+
+    c=c1.sum(c2);
     cout<<"The result is :"<<c.r<<"+"<<c.i<<"i\n";
 }
