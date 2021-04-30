@@ -14,5 +14,5 @@ main()
         cout<<arr[9-i]<<" ";
     cout<<"\nSum: "<<sum<<"\nAverage: "<<sum/10<<"\n";
     delete[] arr;
-    cout<<arr[5];
+    cout<<arr[6]<<"\n";
 }

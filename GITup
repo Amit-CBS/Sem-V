@@ -1,0 +1,72 @@
+#!/bin/bash
+
+BLUE='\033[1;34m'
+GREEN='\033[1;32m'
+RED='\033[1;31m'
+NC='\033[0m'
+
+echo -e "${GREEN}\nThis script runs some basic GIT commands.${NC}"
+echo -e "${RED}\nMenu:\n   0. TERMINAL\t   6. COMMIT\n   1. INIT\t   7. PUSH MASTER\n   2. ORIGIN\t   8. CREATE BRANCH\n   3. PULL \t   9. CHECKOUT TO BRANCH\n   4. STATUS \t  10. PUSH BRANCH\n   5. ADD\n${NC}"
+echo -e -n "${BLUE}Enter a number from the above menu or any other value to exit: ${NC}"
+read choice
+
+case $choice in
+	1)
+		echo -e '\e[GIT init:\e[25m\n'
+		git init
+		;;
+	2)
+		echo -e '\e[GIT origin:\e[25m\n'
+		echo -n 'Enter GIT address: '
+		read address
+		eval 'git remote add origin $address'
+		;;
+	3)
+		echo -e '\e[5mCPull GIT files:\e[25m\n'
+		git pull origin master
+		;;
+	4)
+		echo -e '\e[5mCheck GIT status:\e[25m\n'
+		git status
+		;;
+	5)
+		echo -e '\e[5mAdd GIT files:\e[25m\n'
+		git add .
+		;;
+	6)
+		echo -e '\e[5mCommit GIT files:\e[25m\n'
+		echo -n 'Enter COMMIT message: '
+		read message
+		eval 'git commit -m "$message"'
+		;;
+	7)
+		echo -e '\e[5mPush Master GIT files:\e[25m\n'
+		git push origin master
+		;;
+	8)
+		echo -e '\e[5mCreate a Branch:\e[25m\n'
+		echo -n 'Enter BRANCH name: '
+		read branch
+		eval 'git branch "$branch"'
+		;;
+	9)
+		echo -e '\e[5mEnter a Branch:\e[25m\n'
+		echo -n 'Enter BRANCH name: '
+		read branch
+		eval 'git checkout "$branch"'
+		;;
+	10)
+		echo -e '\e[5mPush Branch GIT files:\e[25m\n'
+		echo -n 'Enter BRANCH name: '
+		read branch
+		eval 'git push origin "$branch"'
+		;;
+	0)
+		exec /bin/bash
+		;;
+	*)	
+		exit
+		;;
+		
+esac
+source GITup
